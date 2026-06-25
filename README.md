@@ -2,11 +2,12 @@
 
 Kinetic Monte Carlo, global Monte Carlo sensitivity analysis (Sobol), and 2D finite-element/finite-difference modeling of how Boron, Arsenic, and Phosphorus diffuse through Silicon-Germanium (SiGe) thin films at sub-micron device scale.
 
-This repository holds the simulation code and raw/processed results behind that work. It does not include the manuscript itself, by design — this is the reproducible computational core, independent of any particular write-up.
+This repository contains the simulation code and the raw/processed results from that work. 
+This is the reproducible computational core, independent of any particular write-up.
 
 ## Background
 
-SiGe alloys are central to modern heterojunction bipolar transistors (HBTs) and strained-channel devices because germanium incorporation tunes both the bandgap and the diffusivity of common dopants. A simple "Ge fraction changes diffusivity by some exponential factor" relationship is widely used in device design, but that relationship is normally fit from continuum (Fick's-law) models alone. This project asks a more careful question: does that phenomenological exponent actually hold up when the same physics is modeled from first principles, atom by atom?
+SiGe alloys are central to modern heterojunction bipolar transistors (HBTs) and strained-channel devices because germanium incorporation tunes both the bandgap and the diffusivity of common dopants. A simple "Ge fraction changes diffusivity by some exponential factor" relationship is widely used in device design, but it is typically fit from continuum (Fick's law) models alone. This project asks a more careful question: does that phenomenological exponent actually hold up when the same physics is modeled from first principles, atom by atom?
 
 Three independent computational methods are used to answer that:
 
@@ -30,9 +31,9 @@ Three independent computational methods are used to answer that:
 | Phosphorus | 1000 | 0.80 | 0.7 | +14.6% | 1.0000 |
 | Phosphorus | 1100 | 0.75 | 0.7 | +7.1% | 1.0000 |
 
-The KMC-emergent exponents track the phenomenological values closely (within roughly 3-24%) across all nine (species, temperature) conditions, with the gap consistently narrowing at higher temperature. Phosphorus shows the largest, most systematic deviation, suggesting its phenomenological alpha is the least well calibrated of the three.
+The KMC-emergent exponents track the phenomenological values closely (within roughly 3-24%) across all nine (species, temperature) conditions, with the gap consistently narrowing at higher temperature. Phosphorus shows the largest, most systematic deviation, suggesting that its phenomenological alpha is the least well-calibrated of the three.
 
-**Sobol global sensitivity** (first-order S_i / total-order ST_i, `matlab/sobol_results_*.csv`): for all three dopants, the Arrhenius prefactor D0 and activation energy Ea dominate the variance in predicted junction depth (D0 alone explains 55-65% of output variance), while anneal time and the alpha exponent itself contribute comparatively little on their own. This means most of the practical uncertainty in junction-depth predictions traces back to how well D0 and Ea are calibrated experimentally, not to the diffusion model's structural assumptions.
+**Sobol global sensitivity** (first-order S_i / total-order ST_i, `matlab/sobol_results_*.csv`): for all three dopants, the Arrhenius prefactor D0 and activation energy Ea dominate the variance in predicted junction depth (D0 alone explains 55-65% of output variance), while anneal time and the alpha exponent itself contribute comparatively little on their own. This means most of the practical uncertainty in junction-depth predictions stems from how well D0 and Ea are experimentally calibrated, not from the diffusion model's structural assumptions.
 
 Result figures:
 - `matlab/sobol_indices_bar.png`, `matlab/sobol_comparison_all_dopants.png` — Sobol indices, all dopants
