@@ -1,4 +1,4 @@
-# GeFusion — Multi-Method Simulation Toolkit for Dopant Diffusion in SiGe Nanodevices
+# GeFusion: Multi-Method Simulation Toolkit for Dopant Diffusion in SiGe Nanodevices
 
 Kinetic Monte Carlo, global Monte Carlo sensitivity analysis (Sobol), and 2D finite-element/finite-difference modeling of how Boron, Arsenic, and Phosphorus diffuse through Silicon-Germanium (SiGe) thin films at sub-micron device scale.
 
@@ -17,7 +17,7 @@ Three independent computational methods are used to answer that:
 
 ## Key results
 
-**KMC-emergent alpha vs. the phenomenological alpha** (from `matlab/kmc_alpha_fit_summary.csv`, 1224 underlying KMC runs):
+**KMC: emergent alpha vs. the phenomenological alpha** (from `matlab/kmc_alpha_fit_summary.csv`, 1224 underlying KMC runs):
 
 | Species | T (C) | alpha (KMC, emergent) | alpha (phenomenological) | Difference | R-squared of fit |
 |---|---|---|---|---|---|
@@ -102,4 +102,4 @@ This work was carried out as part of a microelectronics course project under the
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Dor Azran, Ariel University.
+MIT- see [LICENSE](LICENSE). Copyright (c) 2026 Dor Azran, Ariel University.
